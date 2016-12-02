@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  background-color: white; }
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px; }
+
+.bs-callout p:last-child {
+  margin-bottom: 0; }
+
+.bs-callout code {
+  border-radius: 3px; }
+
+.bs-callout + .bs-callout {
+  margin-top: -5px; }
+
+.bs-callout-success {
+  border-left-color: #5cb85c; }
+
+.bs-callout-success h4, .bs-callout-success h4 a {
+  color: #5cb85c; }
+
+.primary {
+  color: #89bdd3; }
+
+.secondary {
+  color: #9ad3de; }
+
+body {
+  background-color: #e3e3e3 !important; }
+
+.dashboard {
+  margin-top: 20px; }
+
+#top-area {
+  background-color: #89bdd3; }
+  #top-area a {
+    color: white; }
+  #top-area .nav-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2.4rem; }
+  #top-area .active {
+    background-color: #64a8c5;
+    border-radius: 5px;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+div.spacer {
+  height: 20px; }
+
+/*# sourceMappingURL=styles.css.map */

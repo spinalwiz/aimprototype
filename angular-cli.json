@@ -18,7 +18,9 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "assets/styles.css",
+        "assets/bootstrap.min.css"
       ],
       "scripts": [],
       "environments": {

@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<div id="top-area">
+  <div class="container">
+    <div class="row spacer">
+
+    </div>
+    <div class="row">
+      <nav class="navbar">
+        <a class="navbar-brand" style="font-family: fantasy; font-size: 2rem;" href="#">Aim Train</a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><a class="nav-link m-l-1" routerLink="/dashboard" routerLinkActive="active">Home</a></li>
+          <li class="nav-item"><a class="nav-link m-l-1" routerLink="/stats" routerLinkActive="active">Your Stats</a></li>
+          <li class="nav-item"><a class="nav-link m-l-1" routerLink="/games" routerLinkActive="active">Games</a></li>
+          <li class="nav-item"><a class="nav-link m-l-1" routerLink="/game" routerLinkActive="active">Play</a></li>
+          <li class="nav-item pull-xs-right">
+            <auth></auth>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+$primary-colour: #89bdd3;
+$secondary-colour: #9ad3de;
+$primary-grey: #c9c9c9;
+$secondary-grey: #e3e3e3;
+$brand-success: #5cb85c;
+//http://www.awwwards.com/web-design-awards/dream-team-katarzyna-konkowska
+
+$container-width: 988px;
+
+@import 'callout';
+
+.primary {
+  color: $primary-colour;
+}
+
+.secondary {
+  color: $secondary-colour;
+}
+
+body {
+  background-color: $secondary-grey !important;
+}
+
+.dashboard {
+  margin-top: 20px;
+}
+
+#top-area {
+  background-color: $primary-colour;
+
+  a {
+    color: white;
+  }
+
+  .nav-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+  }
+
+  .active {
+    background-color: darken( $primary-colour, 10%);
+    border-radius: 5px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+div.spacer {
+  height: 20px;
+}
+
+
+
+
