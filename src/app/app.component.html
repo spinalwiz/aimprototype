@@ -10,9 +10,19 @@
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/dashboard" routerLinkActive="active">Home</a></li>
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/stats" routerLinkActive="active">Your Stats</a></li>
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/games" routerLinkActive="active">Games</a></li>
+          <li class="nav-item"><a class="nav-link m-l-1" routerLink="/training-plan" routerLinkActive="active">Go Train</a></li>
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/game" routerLinkActive="active">Play</a></li>
           <li class="nav-item pull-xs-right">
-            <auth></auth>
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle><i class="fa fa-user" aria-hidden="true"></i> {{auth.userProfile?.given_name}}</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <button class="dropdown-item" routerLink="/settings">Account Settings</button>
+                <button class="dropdown-item">Invite Friends</button>
+                <button class="dropdown-item">Help</button>
+                <button class="dropdown-item" routerLink="/login" *ngIf="!auth.authenticated()">Log In</button>
+                <button class="dropdown-item" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>

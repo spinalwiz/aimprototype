@@ -10,62 +10,70 @@ let Auth0Lock = require('auth0-lock').default;
 @Injectable()
 export class AuthService {
 
-    // Configure Auth0
-    lock = new Auth0Lock('YNBFHMd7KYaPBCDoH5fQfVmbEi4WUSTW', 'aimtrain.eu.auth0.com', {});
+  // Configure Auth0
+  options = {
+    // container: 'login-container',
+    // auth: {
+    //   redirectUrl: 'http://localhost:4200'
+    // }
+  };
 
-    // Store profile object in auth class
-    userProfile: any; // changed from Object as was creating typescript errors
+  lock = new Auth0Lock('YNBFHMd7KYaPBCDoH5fQfVmbEi4WUSTW', 'aimtrain.eu.auth0.com', this.options);
 
-    constructor(private router: Router) {
+  // Store profile object in auth class
+  userProfile: any; // changed from Object as was creating typescript errors
 
-        // Set userProfile attribute of already saved profile
-        this.userProfile = JSON.parse(localStorage.getItem('profile'));
+  constructor(private router: Router) {
 
-        this.lock.on('authenticated', (authResult) => {
-            localStorage.setItem('id_token', authResult.idToken);
+    // Set userProfile attribute of already saved profile
+    this.userProfile = JSON.parse(localStorage.getItem('profile'));
 
-            // Fetch profile information
-            this.lock.getProfile(authResult.idToken, (error, profile) => {
-                if (error) {
-                    // Handle error
-                    alert(error);
-                    return;
-                }
+    this.lock.on('authenticated', (authResult) => {
+      localStorage.setItem('id_token', authResult.idToken);
 
-                localStorage.setItem('profile', JSON.stringify(profile));
-                this.userProfile = profile;
+      // Fetch profile information
+      this.lock.getProfile(authResult.idToken, (error, profile) => {
+        if (error) {
+          // Handle error
+          alert(error);
+          return;
+        }
 
-                // Redirect to the saved URL, if present.
-                let redirectUrl: string = localStorage.getItem('redirect_url');
-                if (redirectUrl !== undefined) {
-                    this.router.navigate([redirectUrl]);
-                    localStorage.removeItem('redirect_url');
-                }
-            });
-        });
-    }
+        localStorage.setItem('profile', JSON.stringify(profile));
+        this.userProfile = profile;
 
-    public login() {
-        // Call the show method to display the widget.
-        this.lock.show();
-    };
+        // Redirect to the saved URL, if present.
+        let redirectUrl: string = localStorage.getItem('redirect_url');
+        if (redirectUrl !== undefined) {
+          this.router.navigate([redirectUrl]);
+          localStorage.removeItem('redirect_url');
+        }
+      });
+    });
+  }
 
-    public authenticated() {
-        // Check if there's an unexpired JWT
-        // This searches for an item in localStorage with key == 'id_token'
-        return tokenNotExpired();
-    };
+  public login() {
+    // Call the show method to display the widget.
+    this.lock.show();
+  };
 
-    public logout() {
-        // Remove token and profile from localStorage
-        localStorage.removeItem('id_token');
-        localStorage.removeItem('profile');
-        this.userProfile = undefined;
-    };
+  public authenticated() {
+    // Check if there's an unexpired JWT
+    // This searches for an item in localStorage with key == 'id_token'
+    return tokenNotExpired();
+  };
 
-    public isAdmin() {
-        return this.userProfile && this.userProfile.app_metadata
-            && this.userProfile.app_metadata.roles
-            && this.userProfile.app_metadata.roles.indexOf('admin') > -1;
-    }
+  public logout() {
+    // Remove token and profile from localStorage
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('profile');
+    this.userProfile = undefined;
+  };
+
+  public isAdmin() {
+    return this.userProfile && this.userProfile.app_metadata
+      && this.userProfile.app_metadata.roles
+      && this.userProfile.app_metadata.roles.indexOf('admin') > -1;
+  }
+
 }

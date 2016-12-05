@@ -1,18 +1,14 @@
 import {ModuleWithProviders}  from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {UserProfileComponent} from './userprofile/userprofile.component';
 import {AuthGuard}                   from './services/auth.guard';
 import {AdminComponent} from './admin/admin.component';
 import {GameCanvasComponent} from './gamecanvas/gamecanvas.component';
+import {LoginComponent} from "./login/login.component";
 
 
 
 const appRoutes: Routes = [
-  {
-    path: 'profile',
-    component: UserProfileComponent
-  },
   {
     path: 'game',
     component: GameCanvasComponent
@@ -21,6 +17,10 @@ const appRoutes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 
   ];

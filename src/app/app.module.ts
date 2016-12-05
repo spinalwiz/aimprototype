@@ -9,9 +9,7 @@ import {routing} from './app.routing';
 import {AppComponent} from './app.component';
 import {HighscoresService} from './services/highscores.service';
 import {AuthService} from "./services/auth.service";
-import {AuthComponent} from './auth/auth.component';
 import {AUTH_PROVIDERS} from 'angular2-jwt';
-import {UserProfileComponent} from './userprofile/userprofile.component';
 import {AdminComponent} from './admin/admin.component';
 import {AuthGuard} from "./services/auth.guard";
 import {GameCanvasComponent} from './gamecanvas/gamecanvas.component';
@@ -23,27 +21,32 @@ import {UserPerformanceDataService} from "./services/user-performance-data.servi
 import {SharedModule} from "./shared/shared.module";
 import {StatsModule} from "./stats/stats.module";
 import {GamesModule} from "./games/games.module";
+import {TrainingPlanModule} from "./training-plan/training-plan.module";
+import {SettingsModule} from "./settings/settings.module";
+import {LoginComponent } from './login/login.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
-    UserProfileComponent,
     AdminComponent,
     GameCanvasComponent,
-    SafePipe
+    SafePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     routing,
-    NgbModule,
+    NgbModule.forRoot(),
     DashboardModule,
     SharedModule,
     StatsModule,
-    GamesModule
+    GamesModule,
+    TrainingPlanModule,
+    SettingsModule
   ],
   providers: [
     HighscoresService,

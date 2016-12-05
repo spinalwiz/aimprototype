@@ -40,9 +40,8 @@ body {
 
 #top-area {
   background-color: #89bdd3; }
-  #top-area a {
-    color: white; }
-  #top-area .nav-item {
+  #top-area .nav-item a {
+    color: white;
     font-weight: bold;
     font-size: 1.2rem;
     line-height: 2.4rem; }

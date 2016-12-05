@@ -31,11 +31,8 @@ body {
 #top-area {
   background-color: $primary-colour;
 
-  a {
+  .nav-item a{
     color: white;
-  }
-
-  .nav-item {
     font-weight: bold;
     font-size: 1.2rem;
     line-height: 2.4rem;
