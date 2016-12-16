@@ -9,8 +9,8 @@
   "description": "Aimtrain App",
   "angular-cli": {},
   "scripts": {
-    "startHEROKU": "node ./src/server/app.js",
-    "start": "ng serve --proxy-config proxy.conf.json && nodemon .\\src\\server\\app.js",
+    "start": "node ./src/server/app.js",
+    "startLOCAL": "ng serve --proxy-config proxy.conf.json && nodemon .\\src\\server\\app.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
