@@ -12,6 +12,7 @@
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/games" routerLinkActive="active">Games</a></li>
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/training-plan" routerLinkActive="active">Go Train</a></li>
           <li class="nav-item"><a class="nav-link m-l-1" routerLink="/game" routerLinkActive="active">Play</a></li>
+
           <li class="nav-item pull-xs-right">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle><i class="fa fa-user" aria-hidden="true"></i> {{auth.userProfile?.given_name}}</button>
@@ -24,6 +25,11 @@
               </div>
             </div>
           </li>
+          <li class="nav-item pull-xs-right"><button type="button" class="btn btn-primary m-l-3">
+            <i class="fa fa-lock"></i>
+            Unlock Full Access
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button></li>
         </ul>
       </nav>
     </div>
