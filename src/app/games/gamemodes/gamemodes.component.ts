@@ -5,8 +5,8 @@ import {GameModes} from "../../../interfaces/gamemodes.interface";
 
 @Component({
     selector: 'gamemodes',
-    templateUrl: 'gamemodes.component.html',
-    styleUrls: ['gamemodes.component.css']
+    templateUrl: './gamemodes.component.html',
+    styleUrls: ['./gamemodes.component.css']
 })
 export class GameModesComponent implements OnInit {
 

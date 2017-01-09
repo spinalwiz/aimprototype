@@ -4,6 +4,7 @@
       <games-nav></games-nav>
     </div>
     <div class="col-sm-10">
+      <p *ngIf="filter">Filter applied of: {{filter}}</p>
       <router-outlet></router-outlet>
     </div>
 

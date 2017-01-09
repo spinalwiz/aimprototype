@@ -3,8 +3,8 @@ import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'userprofile',
-  templateUrl: 'userprofile.component.html',
-  styleUrls: ['userprofile.component.css']
+  templateUrl: './userprofile.component.html',
+  styleUrls: ['./userprofile.component.css']
 })
 export class UserProfileComponent implements OnInit {
 

@@ -2,30 +2,57 @@ import {NgModule}       from '@angular/core';
 import {RouterModule}   from '@angular/router';
 import {DashboardComponent} from "./dashboard.component";
 import {TrainingPlanComponent} from "./training-plan/training-plan.component";
+import {AuthGuard} from "../services/auth.guard";
+import {LandingComponent} from "../landing/landing.component";
 
 @NgModule({
   imports: [
     RouterModule.forChild([
       {
         path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        component: LandingComponent
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent,
+        path: '',
+        canActivate: [AuthGuard],
         children: [
           {
-            path: ':id',
-            component: DashboardComponent
+            path: 'dashboard',
+            component: DashboardComponent,
+            children: [
+              {
+                path: '',
+                component: TrainingPlanComponent
+              }
+            ]
           },
-          {
-            path: '',
-            component: TrainingPlanComponent
-          }
         ]
       }
     ])
+    // RouterModule.forChild([
+    //   {
+    //     path: '',
+    //     // pathMatch: 'full',
+    //     // canActivate: [Auth Guard],
+    //     children: [
+    //       {
+    //         path: '',
+    //         component: DashboardComponent,
+    //         children: [
+    //
+    //           {
+    //             path: ':id',
+    //             component: DashboardComponent
+    //           },
+    //           {
+    //             path: '',
+    //             component: TrainingPlanComponent
+    //           }
+    //         ]
+    //       }
+    //     ]
+    //   }
+    // ])
   ],
   exports: [
     RouterModule

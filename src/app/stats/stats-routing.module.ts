@@ -2,18 +2,35 @@ import {NgModule}       from '@angular/core';
 import {RouterModule}   from '@angular/router';
 import {StatsComponent} from "./stats.component";
 import {LeaderboardComponent} from "./leaderboard/leaderboard.component";
+import {HistoryComponent} from "./history/history.component";
+import {ReportsComponent} from "./reports/reports.component";
+import {AuthGuard} from "../services/auth.guard";
 
 
 @NgModule({
   imports: [
     RouterModule.forChild([
       {
-        path: 'stats',
-        component: StatsComponent,
+        path: '',
+        canActivate: [AuthGuard],
         children: [
           {
-            path: '',
-            component: LeaderboardComponent
+            path: 'stats',
+            component: StatsComponent,
+            children: [
+              {
+                path: '',
+                component: LeaderboardComponent
+              },
+              {
+                path: 'history',
+                component: HistoryComponent
+              },
+              {
+                path: 'reports',
+                component: ReportsComponent
+              }
+            ]
           }
         ]
       }

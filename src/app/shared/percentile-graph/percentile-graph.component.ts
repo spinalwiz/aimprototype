@@ -3,8 +3,8 @@ import { Component} from '@angular/core';
 
 @Component({
   selector: 'percentile-graph',
-  templateUrl: 'percentile-graph.component.html',
-  styleUrls: ['percentile-graph.component.css']
+  templateUrl: './percentile-graph.component.html',
+  styleUrls: ['./percentile-graph.component.css']
 })
 export class PercentileGraphComponent{
 

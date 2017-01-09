@@ -6,6 +6,7 @@ import {DashboardRoutingModule} from "./dashboard-routing.module";
 import {SharedModule} from "../shared/shared.module";
 import { TrainingPlanComponent } from './training-plan/training-plan.component';
 import { PremiumCalloutComponent } from './premium-callout/premium-callout.component';
+import {LandingComponent} from "../landing/landing.component";
 
 
 @NgModule({
@@ -13,12 +14,14 @@ import { PremiumCalloutComponent } from './premium-callout/premium-callout.compo
     CommonModule,
     DashboardRoutingModule,
     SharedModule
+
   ],
   declarations: [
     DashboardComponent,
     AlertComponent,
     TrainingPlanComponent,
-    PremiumCalloutComponent
+    PremiumCalloutComponent,
+    LandingComponent
   ]
 })
 

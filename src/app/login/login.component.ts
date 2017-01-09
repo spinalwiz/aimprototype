@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
+let Auth0Lock = require('auth0-lock').default;
 
 @Component({
   selector: 'login',
@@ -8,13 +10,28 @@ import {AuthService} from "../services/auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth:AuthService) {
-    if (!auth.authenticated()) {
-      auth.login();
-    }
+  // Create new lock object to ensure ID actually exists.
+  options = {
+    container: 'login-container'
+  };
+
+  lock = new Auth0Lock('YNBFHMd7KYaPBCDoH5fQfVmbEi4WUSTW', 'aimtrain.eu.auth0.com', this.options);
+
+  constructor(private auth:AuthService, private router: Router) {
   }
 
   ngOnInit() {
+    if (!this.auth.authenticated()) {
+      this.login();
+    }
+    else {
+      this.router.navigate(['/dashboard']);
+    }
   }
+
+  private login() {
+    // Call the show method to display the widget.
+    this.lock.show();
+  };
 
 }

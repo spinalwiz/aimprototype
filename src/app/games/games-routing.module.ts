@@ -13,7 +13,12 @@ import {GameModesComponent} from "./gamemodes/gamemodes.component";
         component: GamesComponent,
         children: [
           {
-            path: '',
+            path:'',
+            redirectTo:'all',
+            component: GameModesComponent
+          },
+          {
+            path:':filter',
             component: GameModesComponent
           }
         ]

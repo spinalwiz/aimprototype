@@ -1,14 +1,17 @@
 import {ModuleWithProviders}  from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {AuthGuard}                   from './services/auth.guard';
+import {AuthGuard}           from './services/auth.guard';
 import {AdminComponent} from './admin/admin.component';
 import {GameCanvasComponent} from './gamecanvas/gamecanvas.component';
 import {LoginComponent} from "./login/login.component";
 
 
 
+
 const appRoutes: Routes = [
+
+
   {
     path: 'game',
     component: GameCanvasComponent
@@ -25,7 +28,7 @@ const appRoutes: Routes = [
 
   {
     path: '**',
-    redirectTo: '/dashboard'
+    redirectTo: 'dashboard'
   }
 
   ];

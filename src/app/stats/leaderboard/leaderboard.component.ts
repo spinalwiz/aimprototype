@@ -7,8 +7,8 @@ import {Highscore} from "../../../interfaces/highscore.interface";
 
 @Component({
   selector: 'leaderboard',
-  templateUrl: 'leaderboard.component.html',
-  styleUrls: ['leaderboard.component.css']
+  templateUrl: './leaderboard.component.html',
+  styleUrls: ['./leaderboard.component.css']
 })
 export class LeaderboardComponent implements OnInit {
 

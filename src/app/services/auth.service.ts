@@ -29,7 +29,7 @@ export class AuthService {
     this.userProfile = JSON.parse(localStorage.getItem('profile'));
 
     this.lock.on('authenticated', (authResult) => {
-      console.log("setting id_token");
+
       localStorage.setItem('id_token', authResult.idToken);
 
       // Fetch profile information
@@ -44,12 +44,15 @@ export class AuthService {
         this.userProfile = profile;
 
         // Redirect to the saved URL, if present.
-        let redirectUrl: string = localStorage.getItem('redirect_url');
-        console.log("redirect: " + redirectUrl);
-        if (redirectUrl !== undefined) {
-          this.router.navigate([redirectUrl]);
-          localStorage.removeItem('redirect_url');
-        }
+        // let redirectUrl: string = localStorage.getItem('redirect_url');
+        // console.log("redirect: " + redirectUrl);
+        // if (redirectUrl !== undefined) {
+        //   this.router.navigate([redirectUrl]);
+        //   localStorage.removeItem('redirect_url');
+        // }
+
+        //Always redirect for now
+        this.router.navigate(['/dashboard']);
       });
     });
   }
@@ -57,7 +60,6 @@ export class AuthService {
   public login() {
     // Call the show method to display the widget.
     this.lock.show();
-    console.log("post lock show");
   };
 
   public authenticated() {

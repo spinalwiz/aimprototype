@@ -5,6 +5,8 @@ import {SharedModule} from "../shared/shared.module";
 import {StatsRoutingModule} from "./stats-routing.module";
 import {StatsComponent} from "./stats.component";
 import { StatsNavComponent } from './stats-nav/stats-nav.component';
+import { HistoryComponent } from './history/history.component';
+import { ReportsComponent } from './reports/reports.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { StatsNavComponent } from './stats-nav/stats-nav.component';
   declarations: [
     LeaderboardComponent,
     StatsComponent,
-    StatsNavComponent
+    StatsNavComponent,
+    HistoryComponent,
+    ReportsComponent
   ]
 })
 export class StatsModule {
