@@ -1,4 +1,4 @@
-# Aimapp
+# Aimprototype
 
 ## Built With:
 
@@ -9,8 +9,8 @@
 ## Install / Development
 
 ```bash
-git clone https://github.com/spinalwiz/aimapp
-cd aimapp
+git clone https://github.com/spinalwiz/aimprototype
+cd aimprototype
 
 # Install dependencies
 npm install
