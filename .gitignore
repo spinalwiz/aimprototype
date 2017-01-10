@@ -25,6 +25,7 @@
 npm-debug.log
 testem.log
 /typings
+deploy.bat
 
 # e2e
 /e2e/*.js
