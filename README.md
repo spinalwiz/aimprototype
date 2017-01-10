@@ -1,31 +1,38 @@
 # Aimapp
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
+## Built With:
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular 2 ( 2.x )
+- ExpressJS ( 4.x - with compression )
+- Webpack ( angular-cli )
 
-## Code scaffolding
+## Install / Development
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+```bash
+git clone https://github.com/spinalwiz/aimapp
+cd aimapp
 
-## Build
+# Install dependencies
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# start server
+npm run start
 
-## Running unit tests
+# Client url: http://localhost:4200
+# Application ( epxress ) API: http://localhost:4300
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build / Production
 
-## Running end-to-end tests
+```bash
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+npm run build
 
-## Deploying to Github Pages
+## Deploy dist folder to app server
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+Structure of dist folder:
 
-## Further help
+/dist/server <-- expressjs
+/dist/client <-- angular2
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
