@@ -9,7 +9,6 @@
   "description": "Aimtrain App",
   "angular-cli": {},
   "scripts": {
-    "startHEROKU": "",
     "start": "concurrently --kill-others \"ng serve --proxy-config proxy.conf.json\" \"npm run _server:run\"",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test --watch=false",

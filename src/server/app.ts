@@ -34,17 +34,22 @@ app.use('/api/percentiles', percentileRouter);
 
 
 if (app.get('env') === 'production') {
-
   // in production mode run application from dist folder
   app.use(express.static(path.join(__dirname, '/../client')));
 
 }
 
 if (app.get('env') === 'development') {
+  console.log("Express Running in Development Mode. Use SET NODE_ENV=production")
   app.use('/', express.static(__dirname + '/../client/assets'));
 }
 
-// catch 404 and forward to error handler
+// all other routes are handled by Angular
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '/../client/index.html'));
+});
+
+// Finally catch 404 and forward to error handler
 app.use(function(req: express.Request, res: express.Response, next) {
   let err = new Error('Not Found');
   next(err);
@@ -53,17 +58,11 @@ app.use(function(req: express.Request, res: express.Response, next) {
 // production error handler
 // no stacktrace leaked to user
 app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
-
   res.status(err.status || 500);
   res.json({
     error: {},
     message: err.message
   });
-});
-
-// all other routes are handled by Angular
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/../client/index.html'));
 });
 
 export { app }
