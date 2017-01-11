@@ -12,7 +12,13 @@ export class LoginComponent implements OnInit {
 
   // Create new lock object to ensure ID actually exists.
   options = {
-    container: 'login-container'
+    container: 'login-container',
+    theme: {
+      logo: 'http://www.sulisfineart.com/del/temp-logo.png'
+    },
+    languageDictionary: {
+      title: ''
+    }
   };
 
   lock = new Auth0Lock('YNBFHMd7KYaPBCDoH5fQfVmbEi4WUSTW', 'aimtrain.eu.auth0.com', this.options);

@@ -73,6 +73,7 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
     this.userProfile = undefined;
+    this.router.navigate(['/']);
   };
 
   public isAdmin() {

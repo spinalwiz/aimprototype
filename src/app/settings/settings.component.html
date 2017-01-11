@@ -1,4 +1,5 @@
-<div class="container" *ngIf="auth.authenticated() && auth.userProfile">
+<topnav></topnav>
+<div class="container dashboard" *ngIf="auth.authenticated() && auth.userProfile">
   <div class="row">
     <div class="col-sm-2">
       <settings-nav></settings-nav>

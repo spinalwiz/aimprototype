@@ -1,11 +1,11 @@
 <ul class="nav nav-pills nav-stacked">
   <li class="nav-item">
-    <a class="nav-link active" href="stats">Account</a>
+    <a class="nav-link active" routerLink="/settings" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">Account</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="stats">Email Notifications</a>
+    <a class="nav-link disabled" routerLink="/settings/email" routerLinkActive="active">Email Notifications</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="stats">Training Preferences</a>
+    <a class="nav-link disabled" routerLink="/settings/preferences" routerLinkActive="active">Training Preferences</a>
   </li>
 </ul>

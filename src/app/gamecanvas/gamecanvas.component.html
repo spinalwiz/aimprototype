@@ -1,3 +1,11 @@
-<body>
-<iframe class="embed-responsive embed-responsive-16by9" id="gamewindow" width="800" [src]="gameUrl | safe"></iframe>
-</body>
+<topnav></topnav>
+<div class="container">
+  <h3>Accessing this route will load the game. </h3>
+  <p>Currently, this url accepts two parameters in this format:</p>
+  <p>http://domain.com/game;m=flick;l=1</p>
+  <p>Where m = Game Mode and  l = Game Level</p>
+  <p>These are then used to lookup game configuration data stored in the database (which is returned in JSON)</p>
+  <p>Currently:</p>
+  <p><strong>M = {{mode}}</strong></p>
+  <p><strong>L = {{level}}</strong></p>
+</div>

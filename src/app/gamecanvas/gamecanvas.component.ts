@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import {AuthService} from "../services/auth.service";
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
-import {and} from "@angular/router/src/utils/collection";
+import {GameModesService} from "../services/gamemodes.service";
+
 
 @Component({
   selector: 'gamecanvas',
@@ -11,42 +11,25 @@ import {and} from "@angular/router/src/utils/collection";
 export class GameCanvasComponent implements OnInit {
   mode: String;
   level: String;
-  gameUrl: String = "https://playcanv.as/p/ubmYsFJ9/";
+  configData: any;
 
-  constructor(private authService: AuthService,
-              private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private gameModesService: GameModesService) {
   }
 
 
   ngOnInit() {
-    if (!this.authService.authenticated()) {
-      this.authService.login();
-    } else {
-      // this.sendAuthToken();
-    }
-
     this.route.params.forEach((params: Params) => {
       this.mode = params['m'];
       this.level = params['l'];
     });
-    this.gameUrl += this.generateParamString();
+    this.getGameConfig(this.mode, this.level);
+  }
+
+  getGameConfig(mode, level) {
+
   }
 
 
-  generateParamString() {
 
-    if (this.mode && this.level) {
-      return `?m=${this.mode}&l=${this.level}`;
-    }
-    else if (this.mode) {
-      return `?m=${this.mode}`;
-    }
-    else if (this.level) {
-      `?l=${this.level}`;
-    }
-    else {
-      return "";
-    }
-  }
 
 }

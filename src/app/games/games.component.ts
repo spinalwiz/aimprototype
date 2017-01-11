@@ -15,7 +15,7 @@ export class GamesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.route);
+    // console.log(this.route);
     this.route.firstChild.params.subscribe(
       params => this.filter = params['filter'],
       error => this.filter = ''
