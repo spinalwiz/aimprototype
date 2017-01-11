@@ -7,11 +7,11 @@ import * as morgan from 'morgan';
 
 
 //Set up DB
-// import {mongoose} from "./connection";
 import {gameModeRouter } from "./routes/gamemode.router";
 import {gameDataRouter} from "./routes/gamedata.router";
 import {feedbackRouter} from "./routes/feedback.router";
 import {percentileRouter} from "./routes/percentile.router";
+import {gameConfigRouter} from "./routes/gameconfig.router";
 
 const app: express.Application = express();
 
@@ -29,18 +29,15 @@ app.use('/api/gamemodes', gameModeRouter);
 app.use('/api/gamedata', gameDataRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/percentiles', percentileRouter);
-
-
-
+app.use('/api/gameconfig', gameConfigRouter);
 
 if (app.get('env') === 'production') {
   // in production mode run application from dist folder
   app.use(express.static(path.join(__dirname, '/../client')));
-
 }
 
 if (app.get('env') === 'development') {
-  console.log("Express Running in Development Mode. Use SET NODE_ENV=production")
+  console.log("Express Running in Development Mode. Use SET NODE_ENV=production for production")
   app.use('/', express.static(__dirname + '/../client/assets'));
 }
 

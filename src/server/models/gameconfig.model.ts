@@ -1,5 +1,7 @@
-export interface GameConfig {
-  id: Number,
+import {mongoose} from '../connection';
+
+let gameconfigSchema = new mongoose.Schema({
+  _id: Number,
   mode: String,
   level: Number,
   return_to_centre: Boolean,
@@ -13,4 +15,8 @@ export interface GameConfig {
   time_between_targets: Number,
   time_between_randomise: Boolean,
   target_health: Boolean
-}
+});
+
+let GameConfigModel = mongoose.model('GameConfigs', gameconfigSchema);
+export {GameConfigModel};
+

@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-mongoose.connect('mongodb://spinalwiz:Optick11@ds033986.mlab.com:33986/phtestdb');
+mongoose.connect('mongodb://aimdbuser:mongoDBPass+3+2+5@ds033986.mlab.com:33986/phtestdb');
 (<any>mongoose).Promise = global.Promise;
 let db = mongoose.connection;
 
