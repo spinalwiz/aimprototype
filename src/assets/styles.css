@@ -38,6 +38,9 @@ body {
 .dashboard {
   margin-top: 20px; }
 
+.nav-item {
+  list-style-type: none; }
+
 #top-area {
   background-color: #89bdd3; }
   #top-area .nav-item a {
